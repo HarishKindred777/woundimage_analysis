@@ -1,0 +1,35 @@
+@media all and (min-width: 901px) {
+      .sp {
+            padding: 10px;
+      }
+
+      .cb {
+            padding-left: 10px;
+            width: 500px;
+      }
+}
+
+@media all and (max-width: 900px) {
+      .cb {
+            padding: 10px;
+            font-size: .8em;
+            width: 230px;
+            background: red;
+      }
+
+      .lines {
+            width: 100px;
+            background: red;
+      }
+}
+
+
+
+
+.nb {
+      border: 0px;
+}
+
+.bor{
+      border-width: thick;
+}

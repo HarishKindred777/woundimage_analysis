@@ -1,0 +1,42 @@
+@media all and (min-width: 901px) {
+  #user-form {
+        margin-top: 200px;
+        width: 50%;
+        margin: auto;
+        margin-top: 200px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #user-form {
+        margin-top: 200px;
+        margin: auto;
+        margin-top: 200px;
+  }
+}
+
+.form-labels {
+      padding-top: 25px;
+      padding-bottom: 25px;
+}
+
+.title {
+      position: absolute;
+      top: 5%;
+      left: 0%;
+      right: 0%;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+h1 {
+      text-align: center;
+      font-size: 2em;
+}
+
+body {
+      background-color: #006B79;
+      font-family: monospace;
+      font-size: 1.5em;
+      color: white;
+}

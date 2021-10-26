@@ -1,0 +1,46 @@
+{% block body_avatar %}
+          <div id=wrapper>
+                <div class="text_properties">
+                      <h1>Kindred Body Analysis</h1>
+                      <p>Hover over a part of the body to see the wound location</p>
+                </div>
+
+                <div class="img-loc">
+                      <img class="img-props" src="/static/css/download.png" alt="Human Body" usemap="#bodymap" />
+                </div>
+
+                <div class="hover-box" id="box1">
+                      <i class="hover-text"></i>
+                      <span class="Item" id="ear_left">
+                          <form method="GET">
+                                <button type="submit" class="hover-btn" id="hover1"></button>
+                          </form>
+                      </span>
+                </div>
+
+                <div class="hover-box" id="box2">
+                      <i class="hover-text"></i>
+                      <span class="Item" id="right_heel">
+                          <form method="GET">
+                                <button type="submit" class="hover-btn" id="hover2"></button>
+                          </form>
+                      </span>
+                </div>
+
+                <div class="hover-box" id="box3">
+                      <i class="hover-text"></i>
+                      <span id="sacc">
+                          <form method="GET">
+                                <button type="submit" class="hover-btn" id="hover3"></button>
+                          </form>
+                      </span>
+                </div>
+
+                <div class="search_box">
+                    <form id="processinput2" action="/v1/wound-assessment" method="GET">
+                        <input type="text" name="mrn2" id="mrn2" pattern="[A-Z]{2}[0-9]{8}" title="Must contain two uppercase letters followed by eight numbers" required>
+                        <input type="submit" value="Search">
+                    </form>
+    						</div>
+          </div><!-- wrapper -->
+{% endblock body_avatar %}

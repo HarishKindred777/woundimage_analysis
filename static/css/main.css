@@ -1,0 +1,478 @@
+/* iPad (not iPad Pro) - Portrait */
+@media all and (max-width: 740px) {
+    .container-fluid {
+        padding-top: 45px;
+    }
+
+    .custom-vertical-center div {
+        margin-top: -4px;
+    }
+
+    .section-header {
+        font-size: .7em;
+        font-weight: bold;
+    }
+
+    .section-value {
+        font-size: .8em;
+    }
+
+    .checkbox-value {
+        font-size: .7em;
+    }
+
+/*    #stage-description-column-one {
+        margin-left: -15px;
+    }
+
+    #stage--description-column-two {
+        margin-left: -15px;
+    }*/
+
+    #stage-description-column-four {
+        margin-left: -15px;
+    }
+
+    .column-header {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .row-form {
+        height: 10%;
+    }
+
+    .row-formm {
+        height: 500px;
+    }
+
+    .row-formm2 {
+        height: 50%;
+    }
+
+    .week-row {
+        height: 18%;
+    }
+
+    .week span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .week-date span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .assess span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .stage span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .image_properites {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .directions {
+      font-size: 9px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px; /* centers text vertically*/
+    }
+
+    .eval-text-header {
+        font-size: 14px;
+    }
+}
+
+
+/*  iPad - Landscape | iPad Pro - Portrait */
+@media all and (max-width: 780px) {
+    .container-fluid {
+        padding-top: 45px;
+    }
+
+    .custom-vertical-center div {
+        margin-top: -4px;
+    }
+
+    .section-header {
+        font-size: .8em;
+        font-weight: bold;
+    }
+
+    .section-value {
+        font-size: .7em;
+    }
+
+    .checkbox-value {
+        font-size: .7em;
+    }
+
+    #location-column-two {
+        margin-left: -15px;
+    }
+
+    #location-column-three {
+        margin-left: -15px;
+    }
+
+    .column-header {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .row-form {
+        height: 10%;
+    }
+
+    .row-formm {
+        height: 500px;
+    }
+
+    .row-formm2 {
+        height: 50%;
+    }
+
+    .week-row {
+        height: 18%;
+    }
+
+    .week span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .week-date span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .assess span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .stage span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .image_properites {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .directions {
+      font-size: 9px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px; /* centers text vertically*/
+    }
+}
+
+/*iPad Pro | Landscape */
+@media all and (min-width: 950px) {
+    .container-fluid {
+        padding-top: 45px;
+    }
+
+    .custom-vertical-center div {
+        margin-top: -4px;
+    }
+
+    .section-header {
+        font-size: .8em;
+        font-weight: bold;
+    }
+
+    .section-value {
+        font-size: .7em;
+    }
+
+    .checkbox-value {
+        font-size: .7em;
+    }
+
+    #location-column-two {
+        margin-left: -15px;
+    }
+
+    #location-column-three {
+        margin-left: -15px;
+    }
+
+    .column-header {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .row-form {
+        height: 10%;
+    }
+
+    .row-formm {
+        height: 500px;
+    }
+
+    .row-formm2 {
+        height: 50%;
+    }
+
+    .week-row {
+        height: 18%;
+    }
+
+    .week span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .week-date span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .assess span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .stage span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .image_properites {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .directions {
+      font-size: 9px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px; /* centers text vertically*/
+    }
+}
+
+/*For all media types whose width is 900px (small devices)*/
+@media all and (min-width: 900px) {
+    .container-fluid {
+        padding-top: 45px;
+    }
+
+    .custom-vertical-center div {
+        margin-top: -4px;
+    }
+
+    .section-header {
+        font-size: .8em;
+        font-weight: bold;
+    }
+
+    .section-value {
+        font-size: .7em;
+    }
+
+    .checkbox-value {
+        font-size: .7em;
+    }
+
+    #location-column-two {
+        margin-left: -15px;
+    }
+
+    #location-column-three {
+        margin-left: -15px;
+    }
+
+    .column-header {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .row-form {
+        height: 10%;
+    }
+
+    .row-formm {
+        height: 500px;
+    }
+
+    .row-formm2 {
+        height: 50%;
+    }
+
+    .week-row {
+        height: 18%;
+    }
+
+    .week span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .week-date span {
+        font-size: 10px;
+        padding-top: 5px;
+    }
+
+    .assess span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .stage span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+
+    .image_properites {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .directions {
+      font-size: 9px;
+      font-weight: bold;
+      text-align: center;
+      padding-top: 10px; /* centers text vertically*/
+    }
+
+    .pain span {
+        font-size: 9px;
+        padding-top: 5px;
+    }
+}
+
+
+/* TAGS
+--------------------*/
+button {
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #777777;
+    color: black;
+}
+
+/* CLASSES
+--------------------*/
+[class^="container"] {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+/*Any class attribute that starts with "col-"*/
+[class^="col"] {
+    border-right: 2px solid black;
+}
+
+/*
+rows have a single top border and each row's top
+border forms the bottom of the one above it
+*/
+.row {
+    border-top: 2px solid black;
+}
+
+/* format for section headers (no text alignment) */
+.section-header {
+    font-weight: bold;
+}
+
+/*format for column headers*/
+.column-header {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* should have no borders */
+.borderless {
+    border:0px;
+}
+
+.checkboxes input {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.checkboxes label {
+    display: block;
+    padding-right: 10px;
+    padding-left: 22px;
+    text-indent: -22px;
+}
+
+.checkboxes label input {
+    margin-left: 5px;
+}
+
+.checkboxes label span {
+    vertical-align: middle;
+}
+
+/* format for evaluation section headers */
+.eval-section-header {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.eval-text-header {
+    font-weight: bold;
+}
+
+.scores .col {
+    text-align: center;
+}
+
+.scores .col input {
+    display: none;
+    width: 25px;
+}
+
+#bwat-score-text {
+    display: block;
+    font-weight: bold;
+    color: white;
+    text-align: right;
+}
+
+/*
+remove gutters from bootstrap columns
+NOTE: use .no-gutters to remove gutters
+from a row and its children
+*/
+.no-padding {
+    padding-left:0px;
+    padding-right:0px;
+}
+
+input[id$="size-input"] {
+    width: 40px !important;
+}
+
+.signature-line {
+    padding-bottom:5px;
+}
+
+.signature {
+    margin-left: -15px;
+    margin-right: 15px;
+}

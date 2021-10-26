@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/user_login.css') }}">
+      </head>
+
+      <body>
+            <div class="title" style="position: absolute; left: 50%;">
+                  <div style="position: relative; left: -50%;">
+                        <h1>Kindred Dashboard</h1>
+                  </div>
+            </div>
+
+            <div>
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                        {% for category, message in messages %}
+                              <div class="alert alert-{{ category }}">
+                                    {{ message }}
+                              </div>
+                        {% endfor %}
+                  {% endif %}
+              {% endwith %}
+            </div>
+
+            <div class="content-section" id="user-form">
+                  <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+
+                        <fieldset class="form-group page-label">
+                              <legend class="border-bottom mb-4">Login</legend>
+                              <div class="form-group form-labels">
+                                    {{ form.email.label(class="form-control-label") }}
+                                    {{ form.email(class="form-control form-control-lg") }}
+                              </div>
+
+                              <div class="form-group form-labels">
+                                    {{ form.password.label(class="form-control-label") }}
+                                    {{ form.password(class="form-control form-control-lg") }}
+                              </div>
+
+                              <div class="form-check form-labels">
+                                    {{ form.remember(class="form-check-input") }}
+                                    {{ form.remember.label(class="form-check-label") }}
+                              </div>
+                        </fieldset>
+
+                        <div class="form-group">
+                              {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+
+                        <small class="text-muted ml-2">
+                              <a href="#">Forgot Password?</a>
+                        </small>
+                  </form>
+
+                  <div class="border-top pt-3", style="padding-top: 50px;">
+                        <small class="text-muted">
+                              Need An Account?
+                              <a class="ml-2" href=" {{ url_for('register') }}">Sign Up Now!</a>
+                        </small>
+                  </div>
+            </div>
+      </body>
+</html>

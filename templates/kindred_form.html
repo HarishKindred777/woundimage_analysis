@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+		<!-- CSS for Body Avatar -->
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+
+	<body>
+		<!-- Select Content -->
+		<div id="select-content">
+				<button type="button" id="patient-new-btn" title="Enter patient data and upload image to process">
+						Process Wound Image
+				</button>
+				<button type="button" id="patient-existing-btn" title="Access existing wound forms">
+						Access Wound Forms
+				</button>
+		</div><!-- #select-content -->
+
+		<!-- Patient New -->
+		<div id="patient-new">
+				{% block process_wound_content %}
+					{% include "process_wound.html" %}
+				{% endblock %}
+		</div><!-- #patient-new -->
+
+		<!-- Kindred Form -->
+		<div id="kindred-form" style="border-top: 2px solid black">
+			<nav class="navbar fixed-top flex-nowrap" style="background-color: white; border: 2px solid black">
+				<button type="button" id="toggle-view1" title="View Avatar">Avatar</button>
+				<select id="wound-dropdown-menu" title="Wound Dropdown Menu"></select>
+				<button type="button" id="btn-previous" title="Previous Form">Previous Form</button>
+				<button type="button" id="btn-next" title="Next Form">Next Form</button>
+				<form id="processinput" action="/v1/wound-assessment" method="GET">
+					<input class="check-validity" type="text" name="mrn" id="mrn" size="8" pattern="[A-Z]{2}[0-9]{8}" title="Must contain two uppercase letters followed by eight numbers" required>
+					<input type="submit" value="Search" title="Search">
+				</form>
+				<button type="button" id="update-form" title="Update">Update</button>
+				<button type="button" id="btn-export-csv" title="Export CSV">Export CSV</button>
+				<button type="button" id="btn-export-pdf" title="Export PDF">Export PDF</button>
+				<form action="http://127.0.0.1:5000/email-data" method="GET">
+					<input type="submit" value="Send Email" title="Send Email">
+				</form>
+			</nav>
+			<div id="content">
+			{% block content %}
+				{% include "kindred_grid_elements.html" %}
+			{% endblock %}
+			</div>
+		</div><!-- #kindred-form -->
+
+		<!-- Body Avatar -->
+		<div id="body-avatar" class="page-properties">
+			<button type="button" id="toggle-view2" title="View Form">Form</button>
+				{% block body_avatar %}
+					{% include "body_avatar.html" %}
+				{% endblock %}
+		</div><!-- #body-avatar -->
+
+		<div id="historyy">
+			{% block history_sheet %}
+				{% include "history.html" %}
+			{% endblock %}
+		</div>
+
+		<!-- SCRIPTS -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- javascript -->
+		<script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
+	</body>
+</html>

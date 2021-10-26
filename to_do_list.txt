@@ -1,0 +1,12 @@
+To Do List :)
+
+o  update BWAT Score when a user changes an individual wound score
+o  prevent users from editing or selecting any interactive component for a weekly assessment that has no wound score (this implies there is no assessment for that week yet)
+o  consider redirecting user to wound form after a new patient and/or wound is added to allow the user to fill out the new assessment
+o  remove ability to change wound score for Undermining. This should be tied to changing the size itself (i.e., you can change the score right now without changing the size) so a new size is compared with the score definitions and the appropriate score is selected. This is implemented for Size already.
+o  need more validation that the web service is usable on iPad/iPad Pro devices to ensure the user experience is high; consider asking for an iPad/iPad Pro. Look into whether users are more likely to use an iPad or a desktop (patient rooms or nurse stations may have desktops to allow data entry)
+o  add machine learning model to the web service or as a separate API.
+- the user 1) takes a picture or uploads a picture using the web service, 2) the ML model generateswound scores and stores them in the database, and 3) the user can query a specific MRN to retrieve the wound assessment forms for a given patient and fill the fields not filled automatically by the ML model.
+- once this is completed, then the current method of retrieving a patient's assessment text and generating scores based using wound_sheet.py will be obsolete.
+
+o Cause of Pain needs tracked and saved to the database when the form is updated. This can be modeled off of Stage and Assessment.

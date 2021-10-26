@@ -1,0 +1,130 @@
+@media all and (max-width: 749px) {
+    .col span {
+      font-size: 8px;
+    }
+
+    /*format for headers*/
+    .headers .col span {
+      font-weight: bold;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    h1 {
+      font-size: 24px
+    }
+}
+
+@media all and (min-width: 750px) {
+    .col span {
+      font-size: 10px;
+    }
+
+    /*format for headers*/
+    .headers .col span {
+      font-weight: bold;
+      text-align: center;
+      font-size: 10px;
+    }
+
+    h1 {
+      font-size: 24px
+    }
+}
+
+@media all and (min-width: 800px) {
+    .col span {
+      font-size: 10px;
+    }
+
+    /*format for headers*/
+    .headers .col span {
+      font-weight: bold;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: 32px
+    }
+}
+
+
+@media all and (min-width: 1000px) {
+    .col span {
+      font-size: 14px;
+    }
+
+    /*format for headers*/
+    .headers .col span {
+      font-weight: bold;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 40px
+    }
+}
+
+/* TAGS
+--------------------*/
+button {
+    border-radius: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid #777777;
+    color: black;
+}
+
+nav {
+  background-color: white;
+}
+
+/* CLASSES
+--------------------*/
+[class^="container"] {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+}
+
+/*Any class attribute that starts with "col-"*/
+[class^="col"] {
+  border-right: 2px solid black;
+  white-space: nowrap;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  text-align: center;
+  height: 100%;
+  justify-content: center
+}
+
+/*
+rows have a single top border and each row's top
+border forms the bottom of the one above it
+*/
+/*.row {
+}*/
+
+.navbar {
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 0px;
+  border-left: 2px solid black;
+}
+
+
+/*last column in a row shouldn't have */
+.last {
+  border-right: 0px;
+}
+
+/*should have no borders*/
+.borderless {
+  border:0px;
+}
+
+.no-gutters {
+    padding-right: 0;
+    padding-left: 0;
+}

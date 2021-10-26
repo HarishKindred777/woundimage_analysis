@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/validation.css') }}">
+	</head>
+	<body>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul class="flashes">
+					{% for message in messages %}
+						 <div class="message_flash">{{ message }}</div>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+			<nav class="navbar flex-nowrap">
+				<h1>Validate Wounds</h1>
+				<form id="validation-form" method="POST" enctype="multipart/form-data">
+					<input type="file" id="file" name=file>
+					<input type="submit" id="upload-btn" value="Upload" style="margin-left: 40px">
+				</form>
+			</nav>
+			<div class="container-fluid">
+				<div class="row" style="height:200px">
+					<div class="col borderless">
+						<div class="row" style="background-color: black; height:20%"></div>
+						<div class="row headers" style="height:20%">
+							<div class="col"><span>Major Diagonal</span></div>
+						</div>
+						<div class="row headers" style="height:20%">
+							<div class="col"><span>Minor Diagonal</span></div>
+						</div>
+						<div class="row headers" style="height:20%">
+							<div class="col"><span>Area</span></div>
+						</div>
+						<div class="row headers" style="height:20%">
+							<div class="col"><span>Perimeter</span></div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span>Squared Error</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="major1"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor1"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area1"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter1"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col my-auto">
+								<span title="Mean Squared Error">MSE</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major2"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor2"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area2"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter2"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span title="Root Mean Squared Error">RMSE</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major3"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor3"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area3"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter3"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span title="Relative Mean Squared Error">rMSE</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major4"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor4"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area4"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter4"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span title="R Squared">R2</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major5"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor5"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area5"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter5"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span title="Squared Error Normalized">Squared Error Norm.</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major6"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor6"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area6"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter6"></span>
+							</div>
+						</div>
+					</div>
+					<div class="col borderless">
+						<div class="row headers" style="height:20%">
+							<div class="col">
+								<span title="Mean Square Error Normalized">MSE Norm.</span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="major7"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col ">
+								<span id="minor7"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="area7"></span>
+							</div>
+						</div>
+						<div class="row" style="height:20%">
+							<div class="col">
+								<span id="perimeter7"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- SCRIPTS -->
+		<!-- jQuery -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- javascript -->
+		<script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+	</body>
+</html>

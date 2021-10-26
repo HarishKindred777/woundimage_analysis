@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Email Export</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Please provide an email address</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder="Email" id = "email" name="email" value="{{
+            request.form.email }}">
+        <input class="btn btn-default" type="submit" value="Submit">
+        <h2>How should it be exported?</h2>
+        <input type="checkbox" id="csv-check" name="csv-check" value="{{ request.form.csv }}">
+        <label for="csv-check"> CSV</label><br>
+        <input type="checkbox" id="pdf-check" name="pdf-check" value="{{ request.form.pdf}}">
+        <label for="pdf-check"> PDF</label><br>
+      </form>
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+    </div>
+  </body>
+</html>

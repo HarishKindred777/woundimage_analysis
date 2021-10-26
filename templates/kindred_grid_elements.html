@@ -1,0 +1,1519 @@
+{% block content %}
+    <!-- Wound Form -->
+    <div id="wound-form" class="container-fluid"> <!--  -fluid causes the container to fill the width of the viewport-->
+
+          <!-- Top Form -->
+          <div id="top-form" class="row borderless row-formm" style="height: 450px"> <!-- need to specify height or child tags' height style won't work-->
+
+              <!-- Top Form (Lefthand Side) -->
+              <div id="top-form-left" class="col-8" style="height:inherit"> <!-- must inherit parent's height or else default height is auto -->
+
+                  <!-- Allergies Section -->
+                  <div class="row justify-content-start" style="height: 5%"> 
+                      <div class="col borderless custom-vertical-center" style="height:100%">
+                          <div><span class="section-header">Allergies &emsp;</span> <span class="section-value" id=allergies></span></div>
+                      </div>
+                  </div><!-- #allergies-section -->
+
+
+                  <!-- Wound Number and Date First Observed Section -->
+                  <div id="wound-number-and-date-section" class="row justify-content-start" style="height: 5%">
+
+                      <!-- Wound Number Section -->
+                      <div id="wound-number-section" class="col custom-vertical-center">
+                          <div><span class="section-header">Wound # &emsp;</span> <span class="section-value" id=woundNumber></span></div>
+                      </div><!-- #wound-number-section -->
+
+                      <!-- Date First Observed Section -->
+                      <div id="date-first-observed-section" class="col borderless custom-vertical-center">
+                          <div><span class="section-header">Date First Observed &emsp;</span> <span class="section-value" id=dateFirstObserved></span></div>
+                      </div><!-- #date-first-observed-section -->
+                  </div><!-- #wound-number-and-date-section -->
+
+
+                  <!-- Location Header -->
+                  <div id="location-header" class="row justify-content-start" style="height: 5%">
+                      <div class="col borderless section-header">Location/Anatomic Site:</div>
+                  </div><!-- #location-header -->
+
+                  <!-- Location Selection -->
+                  <div id="location-selection" class="row borderless" style="height: 15%">
+
+                      <!-- Location Column One -->
+                      <div id="location-column-one" class="col borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="sacrum">
+                                  <span class="checkbox-value">Sacrum</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="lateral_ankle">
+                                  <span class="checkbox-value">Lateral Ankle</span>
+                              </label>
+                          </form>
+                      </div><!-- #location-column-one -->
+
+
+                      <!-- Location Column Two -->
+                      <div id="location-column-two" class="col borderless special-location-column">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="trochanter">
+                                  <span class="checkbox-value">Trochanter</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="medial_ankle">
+                                  <span  class="checkbox-value">Medial Ankle</span>
+                              </label>
+                          </form>
+                      </div><!-- #location-column-two -->
+
+
+                      <!-- Location Column Three -->
+                      <div id="location-column-three" class="col borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="ischial_tuberosity">
+                                  <span class="checkbox-value">Ischial Tuberosity</span>
+                              </label>
+                          </form>
+                          <div class="row justify-content-start borderless">
+                              <form class="checkboxes">
+                                  <label class="col borderless">
+                                      <input type="checkbox" id="heel">
+                                      <span class="checkbox-value">Heel</span>
+                                  </label>
+                              </form>
+                              <div class="col borderless">
+                                  <form class="checkboxes input-group" >
+                                      <label>
+                                          <input type="checkbox" id="location-other-checkbox">
+                                          <span class="checkbox-value text-value" id='location-other-text'>Other: Site</span>
+                                          <input type="text" class="text-box" id="location-other-input" size="1" style="display: none">
+                                      </label>
+                                  </form>
+                              </div>
+                          </div>
+                      </div><!-- #location-column-three -->
+                  </div><!-- #location-selection -->
+
+
+                  <!-- Shape Header -->
+                  <div id="shape-header" class="row justify-content-start" style="height:5%">
+                      <span title="Evaluate by observing perimeter and depth" class="col my-auto borderless section-header">Shape/Overall Wound Pattern:</span>
+                  </div><!-- #shape-header-->
+
+                  <!-- Shape Selection -->
+                  <div id="shape-selection" class="row justify-content-start borderless" style="height:15%">
+
+                      <!-- Shape Column One -->
+                      <div id="shape-column-one" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="irregular">
+                                  <span class="checkbox-value">Irregular</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="bowl">
+                                  <span class="checkbox-value">Bowl/Boat</span>
+                              </label>
+                          </form>
+                      </div><!-- #shape-column-one -->
+
+
+                      <!-- Shape Column Two -->
+                      <div id="shape-column-two" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="round">
+                                  <span class="checkbox-value">Round/Oval</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="linear">
+                                  <span class="checkbox-value">Linear/Elongated</span>
+                              </label>
+                          </form>
+                      </div><!-- #shape-column-two -->
+
+
+                      <!-- Shape Column Three -->
+                      <div id="shape-column-three" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="square">
+                                  <span class="checkbox-value">Square/Rectangle</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes input-group">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="shape-other-checkbox">
+                                  <span class="checkbox-value text-value" id='shape-other-text'>Other: Shape</span>
+                              </label>
+                              <input type="text" class="text-box" id="shape-other-input" size="8" style="display: none">
+                          </form>
+                      </div><!-- #shape-column-three -->
+                  </div><!-- #shape-selection -->
+
+
+                  <!-- Etiology Header -->
+                  <div id="etiology-header" class="row justify-content-start" style="height:5%">
+                      <div title="Combine overall evaluation findings to determine" class="col my-auto borderless section-header">Etiology:</div>
+                  </div><!-- #etiology-header -->
+
+                  <!-- Etiology Selection -->
+                  <div id="etiology-selection" class="row justify-content-start borderless" style="height:15%">
+
+                      <!-- Etiology Column One -->
+                      <div id="etiology-column-one" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="pressure">
+                                  <span class="checkbox-value">Pressure</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="dehiscence">
+                                  <span class="checkbox-value">Surgical Dehiscence</span>
+                              </label>
+                          </form>
+                      </div><!-- #etiology-column-one -->
+
+
+                      <!-- Etiology Column Two -->
+                      <div id="etiology-column-two" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="venous">
+                                  <span class="checkbox-value">Venous</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="mixed">
+                                  <span class="checkbox-value">Mixed Ven/Art</span>
+                              </label>
+                          </form>
+                      </div><!-- #etiology-column-two -->
+
+
+                      <!-- Etiology Column Three -->
+                      <div id="etiology-column-three" class="col my-auto borderless">
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="arterial">
+                                  <span class="checkbox-value">Arterial</span>
+                              </label>
+                          </form>
+                          <form class="checkboxes">
+                              <label class="row borderless">
+                                  <input type="checkbox" id="etiology-other-checkbox">
+                                  <span class="checkbox-value text-value" id='etiology-other-text'>Other: Etiology</span>
+                                  <input type="text" class="text-box" id="etiology-other-input" size="8" style="display: none">
+                              </label>
+                          </form>
+                      </div><!-- #etiology-column-three -->
+                  </div><!-- #etiology-selection -->
+
+
+                  <!-- Evaluation Directions  -->
+                  <div id="evaluation-directions" class="row row-form" style="height:10%">
+                      <div class="col borderless directions">
+                          Evaluate each item by picking the response that best describes that wound and entering the score in the item score column – If an indicator does not apply to the wound, score a "1"
+                      </div>
+                  </div><!-- #evaluation-directions -->
+
+
+                  <!-- Assessment Type Description  -->
+                  <div id="assessment-description" class="row justify-content-center row-form" style="height: 10%; line-height: 8px">
+
+                      <!-- Assessment Description Column One -->
+                      <div id="assessment-description-column-one" class="col my-auto borderless">
+                          <span title="adm" style="font-weight: bold; font-size: 9px">Admission</span>
+                          <br><br>
+                          <span title="wkly" style="font-weight: bold; font-size: 9px">Weekly Reassess</span>
+                      </div><!-- #assessment-description-column-one -->
+
+
+                      <!-- Assessment Description Column Two -->
+                      <div id="assessment-description-column-two" class="col my-auto borderless">
+                          <span title="dress" style="font-weight: bold; font-size: 9px">Dressing Change</span>
+                          <br><br>
+                          <span title="D/C" style="font-weight: bold; font-size: 9px">Discharge</span>
+                      </div><!-- #assessment-description-column-two -->
+
+
+                      <!-- Assessment Description Column Three -->
+                      <div id="assessment-description-column-three" class="col my-auto borderless">
+                          <span style="font-weight: bold; font-size: 9px">Type of Assessment (click to select)</span>
+                      </div><!-- #assessment-description-column-three -->
+                  </div><!-- #assessment-description -->
+
+
+                  <!-- Stage Description -->
+                  <div id="stage-description" class="row justify-content-center row-form" style="height: 10%; line-height: 8px">
+
+                      <!-- Stage Description Column One -->
+                      <div id="stage-description-column-one" class="col my-auto borderless" style="padding-right: -20px">
+                          <span title="I" style="font-weight: bold; font-size: 9px">Stage I</span>
+                          <br><br>
+                          <span style="font-weight: bold; font-size: 9px">Unstagable:</span>
+                      </div><!-- #stage-description-column-one-->
+
+
+                      <!-- Stage Description Column Two -->
+                      <div id="stage-description-column-two" class="col my-auto borderless">
+                          <span title="II" style="font-weight: bold; font-size: 9px">Stage II</span>
+                          <br><br>
+                          <span title="nd" style="font-weight: bold; font-size: 9px; white-space: nowrap">Non-removable dressing</span>
+                      </div><!-- #stage-description-column-two -->
+
+
+                      <!-- Stage Description Column Three -->
+                      <div id="stage-description-column-three" class="col my-auto borderless">
+                          <span title="III" style="font-weight: bold; font-size: 9px">Stage III</span>
+                          <br><br>
+                          <span title="nt" style="font-weight: bold; font-size: 9px; white-space: nowrap">Nonviable Tissue</span>
+                      </div><!-- #stage-description-column-three -->
+
+
+                      <!-- Stage Description Column Four -->
+                      <div id="stage-description-column-four" class="col my-auto borderless">
+                          <span title="IV" style="font-weight: bold; font-size: 9px">Stage IV</span>
+                          <br><br>
+                          <span title="sDTI" style="font-weight: bold; font-size: 9px; white-space: nowrap">Suspected Deep Tissue Injury</span>
+                      </div><!-- #stage-description-column-four -->
+
+
+                      <!-- Stage Description Column Five -->
+                      <div id="stage-description-column-five" class="col my-auto borderless">
+                          <span class="row borderless" style="font-weight: bold; font-size: 9px">Stage (click to select)</span>
+                      </div><!-- #stage-description-column-five -->
+                  </div><!-- #stage-description -->
+              </div><!-- #top-form-left -->
+
+
+              <!-- Top Form (Righthand Side) -->
+              <div id="top-form-right" class="col my-auto borderless" style="height:inherit">
+
+                  <!-- Avatar Section -->
+                  <div id="avatar-section" class="row row-formm2" style="height:70%">
+
+                      <!-- Avatar Image -->
+                      <div id="avatar-image" class="col my-auto borderless" style="height:100%">
+                          <img src="{{ url_for('static', filename='css/body_kindred.svg') }}" alt="Human Avatar" class="image_properites" style="object-fit: fill; width: 100%; height: 100%;">
+                      </div><!-- #avatar-image -->
+                  </div><!-- #avatar-section -->
+
+
+                  <!-- Week/Date Selection -->
+                  <div id="week-date-selection" class="row week-row" style="height: 10%; font-size: 12px">
+
+                      <!-- Week/Date Column One -->
+                      <div id="week-date-column-one" class="col">
+                          <div class="row borderless justify-content-center week">
+                              <span>WEEK &nbsp;</span> <span id="weekNum1">____</span>
+                          </div>
+                          <div class="row borderless justify-content-center week-date">
+                              <span id="week1-date">/&nbsp; &nbsp;/</span>
+                          </div>
+                      </div><!-- #week-date-column-one -->
+
+
+                      <!-- Week/Date Column Two -->
+                      <div id="week-date-column-two" class="col">
+                          <div class="row borderless justify-content-center week">
+                              <span>WEEK &nbsp;</span> <span id="weekNum2">____</span>
+                          </div>
+                          <div class="row borderless justify-content-center week-date">
+                              <span id="week2-date">/&nbsp; &nbsp;/</span>
+                          </div>
+                      </div><!-- #week-date-column-two -->
+
+
+                      <!-- Week/Date Column Three -->
+                      <div id="week-date-column-three" class="col">
+                          <div class="row borderless justify-content-center week">
+                              <span>WEEK &nbsp;</span> <span id="weekNum3">____</span>
+                          </div>
+                          <div class="row borderless justify-content-center week-date">
+                              <span id="week3-date">/&nbsp; &nbsp;/</span>
+                          </div>
+                      </div><!-- #week-date-column-three -->
+
+
+                      <!-- Week/Date Column Four -->
+                      <div id="week-date-column-four" class="col borderless">
+                          <div class="row borderless justify-content-center week">
+                              <span>WEEK &nbsp;</span> <span id="weekNum4">____</span>
+                          </div>
+                          <div class="row borderless justify-content-center week-date">
+                              <span id="week4-date">/&nbsp; &nbsp;/</span>
+                          </div>
+                      </div><!-- #week-date-column-four -->
+                  </div><!-- #week-date-selection -->
+
+
+                  <!-- Assessment Type Selection -->
+                  <div id="assessment-selection" class="row week-row" style="font-size: 10px; font-weight: bold; height:10%">
+
+                      <!-- Assessment Type Selection Column One -->
+                      <div id="assessment-selection-column-one" class="col">
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="adm1" style="margin-right: 5px">adm</span>
+                              <span class="selection" id="dress1" style="margin-left: 5px">dress</span>
+                          </div>
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="wkly1" style="margin-right: 5px">wkly</span>
+                              <span class="selection" id="dc1" style="margin-left: 5px">D/C</span>
+                          </div>
+                      </div><!-- #assessment-selection-column-one -->
+
+
+                      <!-- Assessment Type Selection Column Two -->
+                      <div id="assessment-selection-column-two" class="col">
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="adm2" style="margin-right: 5px">adm</span>
+                              <span class="selection" id="dress2" style="margin-left: 5px">dress</span>
+                          </div>
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="wkly2" style="margin-right: 5px">wkly</span>
+                              <span class="selection" id="dc2" style="margin-left: 5px">D/C</span>
+                          </div>
+                      </div><!-- #assessment-selection-column-two -->
+
+
+                      <!-- Assessment Type Selection Column Three -->
+                      <div id="assessment-selection-column-three" class="col">
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="adm3" style="margin-right: 5px">adm</span>
+                              <span class="selection" id="dress3" style="margin-left: 5px">dress</span>
+                          </div>
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="wkly3" style="margin-right: 5px">wkly</span>
+                              <span class="selection" id="dc3" style="margin-left: 5px">D/C</span>
+                          </div>
+                      </div><!-- #assessment-selection-column-three-->
+
+
+                      <!-- Assessment Type Selection Column Four-->
+                      <div id="assessment-selection-column-four" class="col borderless">
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="adm4" style="margin-right: 5px">adm</span>
+                              <span class="selection" id="dress4" style="margin-left: 5px">dress</span>
+                          </div>
+                          <div class="row borderless justify-content-center assess">
+                              <span class="selection" id="wkly4" style="margin-right: 5px">wkly</span>
+                              <span class="selection" id="dc4" style="margin-left: 5px">D/C</span>
+                          </div>
+                      </div><!-- #assessment-selection-column-four -->
+                  </div><!-- #assessment-selection -->
+
+
+                  <!-- Stage Selection -->
+                  <div id="stage-selection" class="row week-row" style="font-size: 10px; font-weight: bold; height:10%">
+
+                      <!-- Stage Selection Column One-->
+                      <div id="stage-selection-column-one" class="col" style="height:100%">
+                          <div class="row borderless justify-content-center stage">
+                              <span class="selection" id="stgI1" style="margin-right: 5px">I</span>
+                              <span class="selection" id="stgII1" style="margin-right: 5px">II</span>
+                              <span class="selection" id="stgIII1" style="margin-right: 5px">III</span>
+                              <span class="selection" id="stgIV1">IV</span>                        
+                          </div>
+                          <div class="row borderless justify-content-center stage">
+                              <span class="selection" id="nd1" style="margin-right: 5px">nd</span>
+                              <span class="selection" id="nt1" style="margin-right: 5px">nt</span>
+                              <span class="selection" id="sdti1">sDTI</span>
+                          </div>
+                      </div><!-- #stage-selection-column-one-->
+
+
+                      <!-- Stage Selection Column Two-->
+                      <div id="stage-selection-column-two" class="col">
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="stgI2" style="margin-right: 5px">I</span>
+                              <span class="selection" id="stgII2" style="margin-right: 5px">II</span>
+                              <span class="selection" id="stgIII2" style="margin-right: 5px">III</span>
+                              <span class="selection" id="stgIV2">IV</span>                        
+                          </div>
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="nd2" style="margin-right: 5px">nd</span>
+                              <span class="selection" id="nt2" style="margin-right: 5px">nt</span>
+                              <span class="selection" id="sdti2">sDTI</span>
+                          </div>
+                      </div><!-- #stage-selection-column-two -->
+
+
+                      <!-- Stage Selection Column Three -->
+                      <div id="stage-selection-column-three" class="col">
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="stgI3" style="margin-right: 5px">I</span>
+                              <span class="selection" id="stgII3" style="margin-right: 5px">II</span>
+                              <span class="selection" id="stgIII3" style="margin-right: 5px">III</span>
+                              <span class="selection" id="stgIV3">IV</span>                        
+                          </div>
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="nd3" style="margin-right: 5px">nd</span>
+                              <span class="selection" id="nt3" style="margin-right: 5px">nt</span>
+                              <span class="selection" id="sdti3">sDTI</span>
+                          </div>
+                      </div><!-- #stage-selection-column-three -->
+
+
+                      <!-- Stage Selection Column Four -->
+                      <div id="stage-selection-column-four" class="col borderless">
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="stgI4" style="margin-right: 5px">I</span>
+                              <span class="selection" id="stgII4" style="margin-right: 5px">II</span>
+                              <span class="selection" id="stgIII4" style="margin-right: 5px">III</span>
+                              <span class="selection" id="stgIV4">IV</span>                        
+                          </div>
+                          <div class="row borderless justify-content-center stage" style="height:inherit">
+                              <span class="selection" id="nd4" style="margin-right: 5px">nd</span>
+                              <span class="selection" id="nt4" style="margin-right: 5px">nt</span>
+                              <span class="selection" id="sdti4">sDTI</span>
+                          </div>
+                      </div><!-- #stage-selection-column-four -->
+                  </div><!-- #stage-selection -->
+              </div><!-- #top-form-right -->
+          </div><!-- #top-form -->
+
+
+          <!-- middle Form -->
+          <div id="middle-form" class="row">
+              <!-- middle Form Content -->
+              <div id="middle-form-content" class="col-12 borderless">
+
+                  <!-- Column Headers -->
+                  <div class="row justify-content-start column-header borderless">
+                      <div class="col-3">Item</div>
+                      <div class="col-5">Assessment</div>
+                      <div class="col-4" style="background-color: black"></div>
+                  </div><!-- #column-headers -->
+
+
+                  <!-- Size Section -->
+                  <div id="size-section" class="row justify-content-start">
+                      <div class="col-3">1. Size</div>
+
+                      <!-- Size Description -->
+                      <div id="size-description" class="col-5">
+                          <p style="text-align: right; font-weight: bold">Size (cm²)</p>
+                          <b>0</b> = Healed, resolved wound<br>
+                          <b>1</b> = Length x Width < 4 sq. cm<br>
+                          <b>2</b> = Length x Width 4 to 16 sq. cm<br>
+                          <b>3</b> = Length x Width 16.1 to 36 sq. cm<br>
+                          <b>4</b> = Length x Width 36.1 to 80 sq. cm<br>
+                          <b>5</b> = Length x Width > 80 sq. cm<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #size-description -->
+
+
+                      <!-- Size Sizes and Scores -->
+                      <div id="size-sizes-and-scores" class="col-4 borderless no-padding">
+
+                          <!-- Size Sizes -->
+                          <div id="size-sizes" class="row borderless no-gutters scores" style="height:20%">
+                              <div class="col" id="week1-size-size">
+                                  <span id="week1-size-size-text"></span>
+                                  <input id="week1-size-size-input" type="text" maxlength="5"></input>
+                              </div>
+                              <div class="col" id="week2-size-size">
+                                  <span id="week2-size-size-text"></span>
+                                  <input id="week2-size-size-input" type="text" maxlength="5"></input>
+                              </div>
+                              <div class="col" id="week3-size-size">
+                                  <span id="week3-size-size-text"></span>
+                                  <input id="week3-size-size-input" type="text" maxlength="5"></input>
+                              </div>
+                              <div class="col borderless" id="week4-size-size">
+                                  <span id="week4-size-size-text"></span>
+                                  <input id="week4-size-size-input" type="text" maxlength="5"></input>
+                              </div>
+                          </div><!-- #size-sizes -->
+
+
+                          <!-- Size Scores -->
+                          <div id="size-scores" class="row no-gutters scores" style="height:80%">
+                              <div class="col" id="week1-size-score">
+                                  <span id="week1-size-score-text"></span>
+                                  <input id="week1-size-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-size-score">
+                                  <span id="week2-size-score-text"></span>
+                                  <input id="week2-size-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-size-score">
+                                  <span id="week3-size-score-text"></span>
+                                  <input id="week3-size-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-size-score">
+                                  <span id="week4-size-score-text"></span>
+                                  <input id="week4-size-score-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div><!-- #size-scores -->
+                      </div><!-- #size-sizes-and-scores -->
+                  </div><!-- #size-section -->
+
+
+                  <!-- Depth Section -->
+                  <div id="depth-section" class="row justify-content-start">
+                      <div class="col-3">2. Depth</div>
+
+                      <!-- Depth Description -->
+                      <div id="depth-description" class="col-5">
+                          <b>0</b> = Healed, resolved wound<br>
+                          <b>1</b> = Non-blanchable erythema on intact skin<br>
+                          <b>2</b> = Partial thickness skin loss involving epidermis and/or dermis<br>
+                          <b>3</b> = Full thickness skin loss involving damage or necrosis of
+                              subcutaneous tissue; may extend down to but not through
+                              underlying fascia; and/or mixed partial and full thickness and/or tissue layers
+                              obscured by granulation tissue<br>
+                          <b>4</b> = Obscured by necrosis (score sDTI / unstagable here)<br>
+                          <b>5</b> = Full thickness skin loss with extensive destruction, tissue
+                          necrosis or damage to muscle, bone or supporting structures<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #depth-description -->
+
+
+                      <!-- Depth Scores -->
+                      <div id="depth-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-depth">
+                                  <span id="week1-depth-text"></span>
+                                  <input id="week1-depth-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-depth">
+                                  <span id="week2-depth-text"></span>
+                                  <input id="week2-depth-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-depth">
+                                  <span id="week3-depth-text"></span>
+                                  <input id="week3-depth-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-depth">
+                                  <span id="week4-depth-text"></span>
+                                  <input id="week4-depth-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #depth-scores -->
+                  </div><!-- #depth-section -->
+
+
+                  <!-- Edges Section -->
+                  <div id="edges-section" class="row justify-content-start">
+                      <div class="col-3">3. Edges</div>
+
+                      <!-- Edges Description -->
+                      <div id="edges-description" class="col-5">
+                          <b>0</b> = Healed, resolved wound<br>
+                          <b>1</b> = Indistinct, diffuse, none clearly visible<br>
+                          <b>2</b> = Distinct, outline clearly visible, attached, even with wound base<br>
+                          <b>3</b> = Well-defined, not attached to wound base<br>
+                          <b>4</b> = Well-defined, not attached to base, rolled under, thickened<br>
+                          <b>5</b> = Well-defined, fibrotic, scarred, hyperkeratotic<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #edges-description -->
+
+
+                      <!-- Edges Scores -->
+                      <div id="edges-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-edges">
+                                  <span id="week1-edges-text"></span>
+                                  <input id="week1-edges-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-edges">
+                                  <span id="week2-edges-text"></span>
+                                  <input id="week2-edges-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-edges">
+                                  <span id="week3-edges-text"></span>
+                                  <input id="week3-edges-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-edges">
+                                  <span id="week4-edges-text"></span>
+                                  <input id="week4-edges-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #edges-scores -->
+                  </div><!-- #edges-section -->
+
+
+                  <!-- Undermining Section -->
+                  <div id="undermining-section" class="row justify-content-start">
+                      <div class="col-3">4. Undermining</div>
+
+                      <!-- Undermining Description -->
+                      <div id="undermining-description" class="col-5">
+                          <p style="text-align: right; font-weight: bold">Size (cm)</p>
+                          <b>0</b> = Healed, resolved wound<br>
+                          <b>1</b> = None present<br>
+                          <b>2</b> = Undermining < 2 cm in any area<br>
+                          <b>3</b> = Undermining 2 – 4 cm involving < 50% wound margins<br>
+                          <b>4</b> = Undermining 2 – 4 cm involving > 50% wound margins<br>
+                          <b>5</b> = Undermining > 4 cm or tunneling in any area<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #undermining-description -->
+
+
+                      <!-- Undermining Sizes and Scores -->
+                      <div id="undermining-sizes-and-scores" class="col-4 borderless no-padding">
+
+                          <!-- Undermining Sizes -->
+                          <div id="undermining-sizes" class="row borderless no-gutters scores" style="height:20%">
+                              <div class="col" id="week1-under-size">
+                                  <span id="week1-under-size-text"></span>
+                                  <input id="week1-under-size-input" type="text" maxlength="4"></input>
+                              </div>
+                              <div class="col" id="week2-under-size">
+                                  <span id="week2-under-size-text"></span>
+                                  <input id="week2-under-size-input" type="text" maxlength="4"></input>
+                              </div>
+                              <div class="col" id="week3-under-size">
+                                  <span id="week3-under-size-text"></span>
+                                  <input id="week3-under-size-input" type="text" maxlength="4"></input>
+                              </div>
+                              <div class="col borderless" id="week4-under-size">
+                                  <span id="week4-under-size-text"></span>
+                                  <input id="week4-under-size-input" type="text" maxlength="4"></input>
+                              </div>
+                          </div><!-- #undermining-sizes -->
+
+
+                          <!-- Undermining Scores -->
+                          <div id="undermining-scores" class="row no-gutters scores" style="height:80%;">
+                              <div class="col" id="week1-under-score">
+                                  <span id="week1-under-score-text"></span>
+                                  <input id="week1-under-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-under-score">
+                                  <span id="week2-under-score-text"></span>
+                                  <input id="week2-under-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-under-score">
+                                  <span id="week3-under-score-text"></span>
+                                  <input id="week3-under-score-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-under-score">
+                                  <span id="week4-under-score-text"></span>
+                                  <input id="week4-under-score-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div><!-- #undermining-scores-->
+                      </div><!-- #undermining-sizes-and-scores -->
+                  </div><!-- #undermining-section -->
+
+
+                  <!-- Necrotic Tissue Type Section -->
+                  <div id="necrotic-tissue-type-section" class="row justify-content-start">
+                      <div class="col-3">5. Necrotic Tissue Type</div>
+
+                      <!-- Necrotic Tissue Type Description -->
+                      <div id="necrotic-tissue-type-description" class="col-5">
+                          <b>1</b> = None visible<br>
+                          <b>2</b> = White/grey non-viable tissue and/or non-adherent yellow slough<br>
+                          <b>3</b> = Loosely adherent yellow slough<br>
+                          <b>4</b> = Adherent, soft, black eschar<br>
+                          <b>5</b> = Firmly adherent, hard, black eschar<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #necrotic-tissue-type-description -->
+
+
+                      <!-- Necrotic Tissue Type Scores -->
+                      <div id="necrotic-tissue-type-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-nec-type">
+                                  <span id="week1-nec-type-text"></span>
+                                  <input id="week1-nec-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-nec-type">
+                                  <span id="week2-nec-type-text"></span>
+                                  <input id="week2-nec-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-nec-type">
+                                  <span id="week3-nec-type-text"></span>
+                                  <input id="week3-nec-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-nec-type">
+                                  <span id="week4-nec-type-text"></span>
+                                  <input id="week4-nec-type-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #necrotic-tissue-type-scores -->
+                  </div><!-- #necrotic-tissue--type-section -->
+
+
+                  <!-- Necrotic Tissue Amount Section -->
+                  <div id="necrotic-tissue-amount-section" class="row justify-content-start">
+                      <div class="col-3">6. Necrotic Tissue Amount</div>
+
+                      <!-- Necrotic Tissue Amount Description -->
+                      <div id="necrotic-tissue-amount-description" class="col-5">
+                          <b>1</b> = None visible<br>
+                          <b>2</b> = < 25% of wound bed covered<br>
+                          <b>3</b> = 25% to 50% of wound covered<br>
+                          <b>4</b> = > 50% and < 75% of wound covered<br>
+                          <b>5</b> = 75% to 100% of wound covered<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #necrotic-tissue-amount-description -->
+
+
+                      <!-- Necrotic Tissue Amount Scores -->
+                      <div id="necrotic-tissue-amount-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-nec-amount">
+                                  <span id="week1-nec-amount-text"></span>
+                                  <input id="week1-nec-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-nec-amount">
+                                  <span id="week2-nec-amount-text"></span>
+                                  <input id="week2-nec-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-nec-amount">
+                                  <span id="week3-nec-amount-text"></span>
+                                  <input id="week3-nec-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-nec-amount">
+                                  <span id="week4-nec-amount-text"></span>
+                                  <input id="week4-nec-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #necrotic-tissue-amount-scores -->
+                  </div><!-- #necrotic-tissue-amount-section -->
+
+
+                  <!-- Exudate Type Section -->
+                  <div id="exudate-type-section" class="row justify-content-start">
+                      <div class="col-3">7. Exudate Type</div>
+
+                      <!-- Exudate Type Description -->
+                      <div id="exudate-type-description" class="col-5">
+                          <b>1</b> = None<br>
+                          <b>2</b> = Bloody<br>
+                          <b>3</b> = Serosanguineous: thin, watery, pale red/pink<br>
+                          <b>4</b> = Serous: thin watery, clear<br>
+                          <b>5</b> = Purulent: thin or thick, opaque, tan/yellow, with or without odor<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #exudate-type-description -->
+
+
+                      <!-- Exudate Type Scores -->
+                      <div id="exudate-type-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-ex-type">
+                                  <span id="week1-ex-type-text"></span>
+                                  <input id="week1-ex-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-ex-type">
+                                  <span id="week2-ex-type-text"></span>
+                                  <input id="week2-ex-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-ex-type">
+                                  <span id="week3-ex-type-text"></span>
+                                  <input id="week3-ex-type-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-ex-type">
+                                  <span id="week4-ex-type-text"></span>
+                                  <input id="week4-ex-type-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #exudate-type-scores -->
+                  </div><!-- #exudate-type-section-->
+
+
+                  <!-- Exudate Amount Section -->
+                  <div id="exudate-amount-section" class="row justify-content-start">
+                      <div class="col-3">8. Exudate Amount</div>
+
+                      <!-- Exudate Amount Description -->
+                      <div class="col-5">
+                          <b>1</b> = None; dry wound<br>
+                          <b>2</b> = Scant; wound moist but no observable exudate<br>
+                          <b>3</b> = Small<br>
+                          <b>4</b> = Moderate<br>
+                          <b>5</b> = Large<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #exudate-amount-description -->
+
+
+                      <!-- Exudate Amount Scores -->
+                      <div id="exudate-amount-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-ex-amount">
+                                  <span id="week1-ex-amount-text"></span>
+                                  <input id="week1-ex-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-ex-amount">
+                                  <span id="week2-ex-amount-text"></span>
+                                  <input id="week2-ex-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-ex-amount">
+                                  <span id="week3-ex-amount-text"></span>
+                                  <input id="week3-ex-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-ex-amount">
+                                  <span id="week4-ex-amount-text"></span>
+                                  <input id="week4-ex-amount-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #exudate-amount-scores -->
+                  </div><!-- #exudate-amount-section -->
+
+
+                  <!-- Skin Color Surrounding Wound Section -->
+                  <div id="skin-color-wound-section" class="row justify-content-start">
+                      <div class="col-3">9. Skin Color Surrounding Wound</div>
+
+                      <!-- Skin Color Surrounding Wound Description -->
+                      <div id="skin-color-wound-section" class="col-5">
+                          <b>1</b> = Pink or normal for ethnic group<br>
+                          <b>2</b> = Bright red &/or blanches to touch<br>
+                          <b>3</b> = White or grey pallor or hypopigmented<br>
+                          <b>4</b> = Dark red or purple and/or non-blanchable<br>
+                          <b>5</b> = Black or hyperpigmented<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #skin-color-wound-description -->
+
+
+                      <!-- Skin Color Surrounding Wound Scores-->
+                      <div id="skin-color-wound-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-skin">
+                                  <span id="week1-skin-text"></span>
+                                  <input id="week1-skin-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-skin">
+                                  <span id="week2-skin-text"></span>
+                                  <input id="week2-skin-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-skin">
+                                  <span id="week3-skin-text"></span>
+                                  <input id="week3-skin-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-skin">
+                                  <span id="week4-skin-text"></span>
+                                  <input id="week4-skin-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #skin-color-wound-scores -->
+                  </div><!-- #skin-color-wound-section -->
+
+
+                  <!-- Peripheral Tissue Edema Section -->
+                  <div id="peripheral-tissue-edema-section" class="row justify-content-start">
+                      <div class="col-3">10. Peripheral Tissue Edema</div>
+
+                      <!-- Peripheral Tissue Edema Description -->
+                      <div id="peripheral-tissue-edema-description" class="col-5">
+                          <b>1</b> = No swelling or edema<br>
+                          <b>2</b> = Non-pitting edema extends < 4 cm around wound<br>
+                          <b>3</b> = Non-pitting edema extends > 4 cm around wound<br>
+                          <b>4</b> = Pitting edema extends < 4 cm around wound<br>
+                          <b>5</b> = Crepitus and/or pitting edema extends > 4 cm around wound<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #peripheral-tissue-edema-description -->
+
+
+                      <!-- Peripheral Tissue Edema Scores-->
+                      <div id="peripheral-tissue-edema-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-edema">
+                                  <span id="week1-edema-text"></span>
+                                  <input id="week1-edema-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-edema">
+                                  <span id="week2-edema-text"></span>
+                                  <input id="week2-edema-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-edema">
+                                  <span id="week3-edema-text"></span>
+                                  <input id="week3-edema-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-edema">
+                                  <span id="week4-edema-text"></span>
+                                  <input id="week4-edema-input" type="text" maxlength="1"></input>
+                              </div>                          </div>
+                      </div><!-- #peripheral-tissue-edema-scores-->
+                  </div><!-- #peripheral-tissue-edema-section -->
+
+
+                  <!-- Peripheral Tissue Induration Section -->
+                  <div id="peripheral-tissue-induration-section" class="row justify-content-start">
+                      <div class="col-3">11. Peripheral Tissue Induration</div>
+
+                      <!-- Peripheral Tissue Induration Description -->
+                      <div id="peripheral-tissue-induration-description" class="col-5">
+                          <b>1</b> = Not present<br>
+                          <b>2</b> = Induration < 2 cm around wound<br>
+                          <b>3</b> = Induration 2 – 4 cm extending < 50% around wound<br>
+                          <b>4</b> = Induration 2 – 4 cm extending > 50% around wound<br>
+                          <b>5</b> = Induration > 4 cm in any area around wound<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #peripheral-tissue-induration-description -->
+
+
+                      <!-- Peripheral Tissue Induration Scores -->
+                      <div id="peripheral-tissue-induration-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-indur">
+                                  <span id="week1-indur-text"></span>
+                                  <input id="week1-indur-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-indur">
+                                  <span id="week2-indur-text"></span>
+                                  <input id="week2-indur-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-indur">
+                                  <span id="week3-indur-text"></span>
+                                  <input id="week3-indur-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-indur">
+                                  <span id="week4-indur-text"></span>
+                                  <input id="week4-indur-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #peripheral-tissue-induration-scores -->
+                  </div><!-- #peripheral-tissue-induration-section -->
+
+
+                  <!-- Granulation Tissue Section -->
+                  <div id="granulation-tissue-section" class="row justify-content-start">
+                      <div class="col-3">12. Granulation Tissue</div>
+
+                      <!-- Granulation Tissue Description -->
+                      <div id="granulation-tissue-description" class="col-5">
+                          <b>1</b> = Skin intact or partial thickness wound<br>
+                          <b>2</b> = Bright, beefy red: 75% to 100% of wound filled and/or tissue overgrowth<br>
+                          <b>3</b>3 = Bright, beefy red: < 75% and > 25% of wound filled<br>
+                          <b>4</b> = Pink and/or dull, dusky red and/or fills < 25% of wound<br>
+                          <b>5</b> = No granulation present<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #granulation-tissue-description -->
+
+
+                      <!-- Granulation Tissue Scores -->
+                      <div id="granulation-tissue-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-gran">
+                                  <span id="week1-gran-text"></span>
+                                  <input id="week1-gran-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-gran">
+                                  <span id="week2-gran-text"></span>
+                                  <input id="week2-gran-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-gran">
+                                  <span id="week3-gran-text"></span>
+                                  <input id="week3-gran-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-gran">
+                                  <span id="week4-gran-text"></span>
+                                  <input id="week4-gran-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #granulation-tissue-scores -->
+                  </div><!-- #granulation-tissue-section -->
+
+
+                  <!-- Epithelialization Section -->
+                  <div id="epithelialization-section" class="row justify-content-start">
+                      <div class="col-3">13. Epithelialization</div>
+
+                      <!-- Epithelialization Description -->
+                      <div id="epithelialization-description" class="col-5">
+                          <b>1</b> = 100% wound covered, surface intact<br>
+                          <b>2</b> = 75% to < 100% wound covered and/or epithelial tissue extends > 0.5 cm into wound bed<br>
+                          <b>3</b> = 50% to < 75% wound covered and/or epithelial tissue extends to < 0.5 cm into wound bed<br>
+                          <b>4</b> = 25% to < 50% wound covered<br>
+                          <b>5</b> = < 25% wound covered<br>
+                          <p style="text-align: right; font-weight: bold">Score</p>
+                      </div><!-- #epithelialization-description -->
+
+
+                      <!-- Epithelialization Scores -->
+                      <div id="epithelialization-scores" class="col-4 borderless">
+                          <div class="row borderless scores" style="height: 100%">
+                              <div class="col" id="week1-ep">
+                                  <span id="week1-ep-text"></span>
+                                  <input id="week1-ep-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week2-ep">
+                                  <span id="week2-ep-text"></span>
+                                  <input id="week2-ep-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col" id="week3-ep">
+                                  <span id="week3-ep-text"></span>
+                                  <input id="week3-ep-input" type="text" maxlength="1"></input>
+                              </div>
+                              <div class="col borderless" id="week4-ep">
+                                  <span id="week4-ep-text"></span>
+                                  <input id="week4-ep-input" type="text" maxlength="1"></input>
+                              </div>
+                          </div>
+                      </div><!-- #epithelialization-scores-->
+                  </div><!-- #epithelialization-section -->
+
+
+                  <!-- BWAT Scores -->
+                  <div id="bwat-scores" class="row scores">
+                      <div class="col-8" style="background-color: black">
+                          <span id="bwat-score-text">BWAT Score</span>
+                      </div>
+                      <div class="col" id="week1-bwat"></div>
+                      <div class="col" id="week2-bwat"></div>
+                      <div class="col" id="week3-bwat"></div>
+                      <div class="col borderless" id="week4-bwat"></div>
+                  </div><!-- #bwat-scores -->
+
+                  <!-- Cause of Pain -->
+                  <div id="pain-cause" class="row">
+                      <div class="col-8">
+                          <div id="pain-description" class="row justify-content-center borderless row-form" style="line-height: 8px; height: 45px">
+
+                              <!-- Pain Description Column 1 -->
+                              <div id="pain-description-column-1" class="col my-auto borderless">
+                                  <span title="DD" style="font-weight: bold; font-size: 9px">During Debridement</span>
+                                  <br><br>
+                                  <span title="M" style="font-weight: bold; font-size: 9px">Movement</span>
+                              </div><!-- #pain-description-column-1 -->
+
+
+                              <!-- Pain Description Column 2 -->
+                              <div id="pain-description-column-2" class="col my-auto borderless">
+                                  <span title="DT" style="font-weight: bold; font-size: 9px">During Treatment</span>
+                                  <br><br>
+                                  <span title="I" style="font-weight: bold; font-size: 9px">Infection</span>
+                              </div><!-- #pain-description-column-2 -->
+
+
+                              <!-- Pain Description Column 3 -->
+                              <div id="pain-description-column-3" class="col my-auto borderless">
+                                  <span title="N/A" style="font-weight: bold; font-size: 9px">Not Applicable</span>
+                                  <br><br>
+                              </div><!-- #pain-description-column-3 -->
+
+
+                              <!-- Pain Description Column 4 -->
+                              <div id="pain-description-column-4" class="col my-auto borderless">
+                                  <span style="font-weight: bold; font-size: 9px">Cause of Pain (click to select)</span>
+                              </div><!-- #pain-description-column-4 -->
+                          </div><!-- #pain-description -->
+                      </div>
+
+
+                      <div class="col" id="week1-pain" style="font-size: 10px; font-weight: bold; height:45px">
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="na1" style="margin-right: 5px">N/A</span>
+                              <span class="selection" id="dt1" style="margin-right: 5px">DT</span>                      
+                          </div>
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="dd1" style="margin-right: 5px">DD</span>
+                              <span class="selection" id="m1" style="margin-right: 5px">M</span>
+                              <span class="selection" id="i1">I</span>
+                          </div>
+                      </div>
+                      <div class="col" id="week2-pain" style="font-size: 10px; font-weight: bold">
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="na2" style="margin-right: 5px">N/A</span>
+                              <span class="selection" id="dt2" style="margin-right: 5px">DT</span>                       
+                          </div>
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="dd2" style="margin-right: 5px">DD</span>
+                              <span class="selection" id="m2" style="margin-right: 5px">M</span>
+                              <span class="selection" id="i2">I</span>
+                          </div>
+                      </div>
+                      <div class="col" id="week3-pain" style="font-size: 10px; font-weight: bold">
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="na3" style="margin-right: 5px">N/A</span>
+                              <span class="selection" id="dd3" style="margin-right: 5px">DD</span>
+                       
+                          </div>
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="dt3" style="margin-right: 5px">DT</span>
+                              <span class="selection" id="m3" style="margin-right: 5px">M</span>
+                              <span class="selection" id="i3">I</span>
+                          </div>
+                      </div>
+                      <div class="col borderless" id="week4-pain" style="font-size: 10px; font-weight: bold">
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="na4" style="margin-right: 5px">N/A</span>
+                              <span class="selection" id="dd4" style="margin-right: 5px">DD</span>                      
+                          </div>
+                          <div class="row borderless justify-content-center pain">
+                              <span class="selection" id="dt4" style="margin-right: 5px">DT</span>
+                              <span class="selection" id="m4" style="margin-right: 5px">M</span>
+                              <span class="selection" id="i4">I</span>
+                          </div>
+                      </div>
+                  </div><!-- #pain-cause -->
+              </div><!-- #middle-form-content -->
+          </div><!-- #middle-form -->
+
+          <!-- Bottom Form -->
+          <div id="bottom-form" class="row justify-content-start">
+
+                <!-- Bottom Form Content -->
+                <div id="bottom-form-content" class="col-12 borderless">
+
+                      <div class="row justify-content-start borderless">
+                          <div class="col borderless">
+                                  <b>Wound Score Status Continuum: (Do not need to total or plot scores on daily or routine dressing changes)</b>
+                                    Plot the total score on the Pressure Sore Status Continuum for wound listed above by putting an “X” on the line and the date bewneath the line<br>
+                                  <b>Plot scores with their dates</b> to see-at-a glance regeneration or degeneration of the wound, on admission, weekly, change in wound status, and discharge.<
+                                  change in wound status, and discharge.
+                          </div>
+                      </div>
+
+                      <!-- Week 1 Evaluation -->
+                      <div id="week-1-eval" class="row justify-content-start">
+
+                            <!-- Week 1 Evaluation Content -->
+                            <div id="week-1-eval-content" class="col borderless" style="height: 5%">
+
+                                  <!-- Week 1 Evaluation Treatment Goal Header -->
+                                  <div id="week-1-eval-treatment-goal-header" class="row justify-content-start borderless">
+                                      <div class="col-2 borderless">
+                                          <span>WEEK &nbsp;</span> <span id="eval-week-1">____</span>
+                                      </div>
+
+                                      <div class="row justify-content-start borderless" style="height:5%">
+                                          <span class="col borderless eval-section-header">Treatment Goal at Evaluation:</span>
+                                      </div>
+                                  </div><!-- #week-1-eval-treatment-goal-header -->
+
+                                  <!-- Week 1 Evaluation Treatment Goal Content -->
+                                  <div id="week-1-eval-treatment-goal-content" class="row justify-content-start borderless" style="height: 5%">
+
+                                      <!-- Week 1 Evaluation Column 1 -->
+                                      <div id="eval-1-column-1" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="maintain-1">
+                                                  <span class="checkbox-value">Maintain wound status while addressing primary co-morbides</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="prepare-1">
+                                                  <span class="checkbox-value">Prepare wound for skin graft or flap</span>
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-1-column-1 -->
+
+                                      <!-- Week 1 Evaluation Column 2 -->
+                                      <div id="eval-1-column-2" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="progress-1">
+                                                  <span class="checkbox-value">Progress wound toward closure by secondary intention</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes input-group" >
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="eval-1-other-checkbox">
+                                                  <span class="checkbox-value text-value" id='eval-1-other-text'>Other</span>
+                                                  <input type="text" class="text-box" id="eval-1-other-input" size="1" style="display: none">
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-1-column-2 -->
+                                  </div><!-- #week-1-eval-treatment-goal-content -->
+
+
+                                  <!-- Week 1 Evaluation Text-->
+                                  <div id="week-1-eval-text" class="row justify-content-start" style="height: 5%">
+                                      <div class="col borderless">
+                                          <span class="eval-text-header">Treatment Evaluation of Effectiveness (document treatments on Wound Care Treatment Record):</span>
+                                          <textarea id="eval-1-text-input" rows="3" cols="80"></textarea>
+                                      </div>
+                                  </div><!-- #week-1-eval-text -->
+
+                                  <!-- Week 1 Evaluation Signature Line -->
+                                  <div id="week-1-eval-signature-line" class="row justify-content-start borderless no-gutters signature-line" style="height: 5%">
+                                        <div class="col-3 borderless" style="height:100%">
+                                            <b>E-signature & Title:</b>
+                                        </div>
+                                        <div class="col-4 borderless signature" style="height:100%">
+                                            <span id="eval-1-signature-text"></span>
+                                            <input id="eval-1-signature-input" type="text"></input>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Time:</b>
+                                            <span id="eval-1-time"></span>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Date:</b>
+                                            <span id="eval-1-date"></span>
+                                        </div>
+                                  </div><!-- #week-1-eval-signature-line -->
+                            </div><!-- #week-1-eval-selection -->
+                      </div><!-- #week-1-eval -->
+
+                      <!-- Week 2 Evaluation -->
+                      <div id="week-2-eval" class="row justify-content-start">
+
+                            <!-- Week 2 Evaluation Content -->
+                            <div id="week-2-eval-content" class="col borderless" style="height: 5%">
+
+                                  <!-- Week 2 Evaluation Treatment Goal Header-->
+                                  <div id="week-2-treatment-goal-header" class="row justify-content-start borderless">
+                                      <div class="col-2 borderless">
+                                          <span>WEEK &nbsp;</span> <span id="eval-week-2">____</span>
+                                      </div>
+
+                                      <div class="col borderless">
+                                          <span class="eval-section-header">Treatment Goal at Evaluation:</span>
+                                      </div>
+                                  </div><!-- #week-2-treatment-goal-header-->
+
+                                  <!-- Week 2 Evaluation Treatment Goal Content -->
+                                  <div id="week-2-eval-treatment-goal-content" class="row justify-content-start borderless" style="height: 5%">
+
+                                      <!-- Week 2 Evaluation Column 1 -->
+                                      <div id="eval-2-column-1" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="maintain-2">
+                                                  <span class="checkbox-value">Maintain wound status while addressing primary co-morbides</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="prepare-2">
+                                                  <span class="checkbox-value">Prepare wound for skin graft or flap</span>
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-2-column-1 -->
+
+                                      <!-- Week 2 Evaluation Column 2 -->
+                                      <div id="eval-2-column-2" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="progress-2">
+                                                  <span class="checkbox-value">Progress wound toward closure by secondary intention</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes input-group" >
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="eval-2-other-checkbox">
+                                                  <span class="checkbox-value text-value" id='eval-2-other-text'>Other</span>
+                                                  <input type="text" class="text-box" id="eval-2-other-input" size="1" style="display: none">
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-2-column-2 -->
+                                  </div><!-- #week-2-eval-treatment-goal-content -->
+
+                                  <!-- Week 2 Evaluation Text-->
+                                  <div id="week-2-eval-text" class="row justify-content-start" style="height: 5%">
+                                      <div class="col borderless">
+                                          <span class="eval-text-header">Treatment Evaluation of Effectiveness (document treatments on Wound Care Treatment Record):</span>
+                                          <textarea id="eval-2-text-input" rows="3" cols="80"></textarea>
+                                      </div>
+                                  </div><!-- #week-2-eval-text -->
+
+                                  <!-- Week 2 Evaluation Signature Line-->
+                                  <div id="week-2-eval-signature-line" class="row justify-content-start borderless signature-line" style="height: 5%">
+                                        <div class="col-3 borderless" style="height:100%">
+                                            <b>E-signature & Title:</b>
+                                        </div>
+                                        <div class="col-4 borderless signature" style="height:100%">
+                                            <span id="eval-2-signature-text"></span>
+                                            <input id="eval-2-signature-input" type="text"></input>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Time:</b>
+                                            <span id="eval-2-time"></span>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Date:</b>
+                                            <span id="eval-2-date"></span>
+                                        </div>
+                                  </div><!-- #week-2-eval-signature-line -->
+                            </div><!-- #week-2-eval-content -->
+                      </div><!-- #week-2-eval -->
+
+                      <!-- Week 3 Evaluation -->
+                      <div id="week-3-eval" class="row justify-content-start">
+
+                            <!-- Week 3 Evaluation Content -->
+                            <div id="week-3-eval-content" class="col borderless" style="height: 5%;">
+
+                                  <!-- Week 3 Evaluation Treatment Goal Header-->
+                                  <div id="week-3-eval-treatment-goal-header" class="row justify-content-start borderless">
+                                      <div class="col-2 borderless">
+                                          <span>WEEK &nbsp;</span> <span id="eval-week-3">____</span>
+                                      </div>
+
+                                      <div class="col borderless" style="height: 5%">
+                                          <span class="eval-section-header">Treatment Goal at Evaluation:</span>
+                                      </div>
+                                  </div><!-- #week-3-eval-treatment-goal-header-->
+
+                                  <!-- Week 3 Evaluation Treatment Goal Content -->
+                                  <div id="week-3-eval-treatment-goal-content" class="row justify-content-start borderless" style="height: 5%">
+
+                                      <!-- Week 3 Evaluation Column 1 -->
+                                      <div id="eval-3-column-1" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="maintain-3">
+                                                  <span class="checkbox-value">Maintain wound status while addressing primary co-morbides</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="prepare-3">
+                                                  <span class="checkbox-value">Prepare wound for skin graft or flap</span>
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-3-column-1 -->
+
+                                      <!-- Week 3 Evaluation Column 2 -->
+                                      <div id="eval-3-column-2" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="progress-3">
+                                                  <span class="checkbox-value">Progress wound toward closure by secondary intention</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes input-group" >
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="eval-3-other-checkbox">
+                                                  <span class="checkbox-value text-value" id='eval-3-other-text'>Other</span>
+                                                  <input type="text" class="text-box" id="eval-3-other-input" size="1" style="display: none">
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-3-column-2 -->
+                                  </div><!-- #week-3-eval-treatment-goal-content -->
+
+                                  <!-- Week 3 Evaluation Text-->
+                                  <div id="week-3-eval-text" class="row justify-content-start" style="height: 5%">
+                                      <div class="col borderless">
+                                          <span class="eval-text-header">Treatment Evaluation of Effectiveness (document treatments on Wound Care Treatment Record):</span>
+                                          <textarea id="eval-3-text-input" rows="3" cols="80"></textarea>
+                                      </div>
+                                  </div><!-- #week-3-eval-text -->
+
+                                  <!-- Week 3 Evaluation Signature Line -->
+                                  <div id="week-3-eval-signature-line" class="row justify-content-start borderless signature-line" style="height: 5%">
+                                        <div class="col-3 borderless" style="height:100%">
+                                            <b>E-signature & Title:</b>
+                                            <span id="eval-3-signature-text"></span>
+                                        </div>
+                                        <div class="col-4 borderless signature" style="height:100%">
+                                            <input id="eval-3-signature-input" type="text"></input>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Time:</b>
+                                            <span id="eval-3-time"></span>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Date:</b>
+                                            <span id="eval-3-date"></span>
+                                        </div>
+                                  </div><!-- #week-3-eval-signature-line -->
+                            </div><!-- #week-3-eval-content -->
+                      </div><!-- #week-3-eval -->
+
+                      <!-- Week 4 Evaluation -->
+                      <div id="week-4-eval" class="row justify-content-start">
+
+                            <!-- Week 4 Evaluation Content -->
+                            <div id="week-4-eval-content" class="col borderless" style="height: 5%">
+                                  <!-- Week 4 Evaluation Treatment Goal Header-->
+                                  <div id="week-4-eval-treatment-goal" class="row justify-content-start borderless">
+                                      <div class="col-2 borderless">
+                                          <span>WEEK &nbsp;</span> <span id="eval-week-4">____</span>
+                                      </div>
+
+                                      <div class="col borderless" style="height: 5%">
+                                          <span class="eval-section-header">Treatment Goal at Evaluation:</span>
+                                      </div>
+                                  </div><!-- #week-4-eval-treatment-goal-header -->
+
+                                  <!-- Week 4 Evaluation Treatment Goal Content -->
+                                  <div id="week-4-eval-treatment-goal-content" class="row justify-content-start borderless" style="height: 5%">
+
+                                      <!-- Week 4 Evaluation Column 1 -->
+                                      <div id="eval-4-column-1" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="maintain-4">
+                                                  <span class="checkbox-value">Maintain wound status while addressing primary co-morbides</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="prepare-4">
+                                                  <span class="checkbox-value">Prepare wound for skin graft or flap</span>
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-4-column-1 -->
+
+                                      <!-- Week 4 Evaluation Column 2 -->
+                                      <div id="eval-4-column-2" class="col my-auto borderless">
+                                          <form class="checkboxes">
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="progress-4">
+                                                  <span class="checkbox-value">Progress wound toward closure by secondary intention</span>
+                                              </label>
+                                          </form>
+                                          <form class="checkboxes input-group" >
+                                              <label class="row borderless">
+                                                  <input type="checkbox" id="eval-4-other-checkbox">
+                                                  <span class="checkbox-value text-value" id='eval-4-other-text'>Other</span>
+                                                  <input type="text" class="text-box" id="eval-4-other-input" size="1" style="display: none">
+                                              </label>
+                                          </form>
+                                      </div><!-- #eval-4-column-2 -->
+                                  </div><!-- #week-4-eval-treatment-goal-content -->
+
+                                  <!-- Week 4 Evaluation Text-->
+                                  <div id="week-4-eval-report" class="row justify-content-start" style="height: 5%">
+                                      <div class="col borderless">
+                                          <span class="eval-text-header">Treatment Evaluation of Effectiveness (document treatments on Wound Care Treatment Record):</span>
+                                          <textarea id="eval-4-text-input" rows="3" cols="80"></textarea>
+                                      </div>
+                                  </div><!-- #week-4-eval-text -->
+
+                                  <!-- Week 4 Evaluation Signature Line-->
+                                  <div id="week-4-eval-signature-line" class="row justify-content-start borderless signature-line" style="height: 5%">
+                                        <div class="col-3 borderless" style="height:100%">
+                                            <b>E-signature & Title:</b>
+                                        </div>
+                                        <div class="col-4 borderless signature" style="height:100%">
+                                            <span id="eval-4-signature-text"></span>
+                                            <input id="eval-4-signature-input" type="text"></input>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Time:</b>
+                                            <span id="eval-4-time"></span>
+                                        </div>
+
+                                        <div class="col borderless" style="height:100%">
+                                            <b>Date:</b>
+                                            <span id="eval-4-date"></span>
+                                        </div>
+                                  </div><!-- #week-4-eval-signature-line -->
+                            </div><!-- #week-4-eval-content -->
+                      </div><!-- #week-4-eval -->
+                </div><!-- #bottom-form-content -->
+          </div><!-- #bottom-form -->
+      </div><!-- #wound-form -->
+{% endblock content %}
