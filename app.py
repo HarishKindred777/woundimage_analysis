@@ -70,9 +70,14 @@ mail = Mail(app)
 Change server_name and database_name for your specific
 machine before attempting to run app
 '''
-server_name = 'Beanz\TEW_SQLEXPRESS'
-database_name = 'wound_api'
-app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{server_name}/{database_name}?driver=SQL+Server'
+from urllib import parse 
+connecting_string = 'Driver={ODBC Driver 13 for SQL Server};Server=tcp:woundimageanalysis-server.database.windows.net,1433;Database=woundapi;Uid=woundimageanalysis-server-admin;Pwd={4R362AH3ROV4GGGV$};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'
+params = parse.quote_plus(connecting_string)
+app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
+
+##server_name = 'Beanz\TEW_SQLEXPRESS'
+##database_name = 'wound_api'
+##app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{server_name}/{database_name}?driver=SQL+Server'
 
 
 ''' NOTE: Uncomment below block of code to allow Cross-Origin Resource Sharing (CORS) '''
