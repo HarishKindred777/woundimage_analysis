@@ -5,7 +5,7 @@
 # platform: win-64
 aniso8601==8.0.0
 bcrypt==3.2.0
-blas==1.0=mkl
+blas==1.0==mkl
 blinker==1.4
 ca-certificates==2020.6.20
 certifi==2020.6.20
