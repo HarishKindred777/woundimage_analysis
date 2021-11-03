@@ -1,4 +1,4 @@
-pip install xlsxwriter
+!pip install xlsxwriter
 import pandas as pd
 import numpy as np
 import re
