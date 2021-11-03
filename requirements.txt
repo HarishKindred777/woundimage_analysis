@@ -27,9 +27,9 @@ idna==2.10
 ## intel-openmp==2019.4
 itsdangerous==1.1.0
 jinja2==2.11.2
-libblas==3.8.0
-libcblas==3.8.0
-liblapack==3.8.0
+## libblas==3.8.0
+## libcblas==3.8.0
+## liblapack==3.8.0
 markupsafe==1.1.1
 mkl==2019.4
 mkl-service==2.3.0
