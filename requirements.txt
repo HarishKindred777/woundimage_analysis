@@ -41,7 +41,7 @@ pycparser==2.20
 pyodbc==4.0.30
 ## python==3.8.12
 python-dateutil==2.8.1
-python_abi==3.6
+## python_abi==3.6
 pytz==2020.1
 scipy==1.5.2
 setuptools==49.6.0
