@@ -75,13 +75,10 @@ connecting_string = 'Driver={ODBC Driver 13 for SQL Server};Server=tcp:woundimag
 params = parse.quote_plus(connecting_string)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a2064ec1c2b0384b146a12e07837fa5fe9e44495
-##server_name = 'Beanz\TEW_SQLEXPRESS'
-##database_name = 'wound_api'
-##app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{server_name}/{database_name}?driver=SQL+Server'
+# server_name = 'Beanz\TEW_SQLEXPRESS'
+# database_name = 'wound_api'
+# app.config['SQLALCHEMY_DATABASE_URI'] = f'mssql+pyodbc://{server_name}/{database_name}?driver=SQL+Server'
 
 
 ''' NOTE: Uncomment below block of code to allow Cross-Origin Resource Sharing (CORS) '''
