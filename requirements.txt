@@ -24,7 +24,7 @@ flask-sqlalchemy==2.4.4
 flask-wtf==0.14.3
 icc_rt==2019.0.0
 idna==2.10
-intel-openmp==2019.4
+## intel-openmp==2019.4
 itsdangerous==1.1.0
 jinja2==2.11.2
 libblas==3.8.0
