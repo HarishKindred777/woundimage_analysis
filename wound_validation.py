@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 import sys
+pip install xlsxwriter
 import xlsxwriter
 from time import time
 
