@@ -1,9 +1,9 @@
-!pip install xlsxwriter
+# !pip install xlsxwriter
 import pandas as pd
 import numpy as np
 import re
 import sys
-import xlsxwriter
+# import xlsxwriter
 from time import time
 
 
@@ -336,103 +336,9 @@ def create_dfs(d1: dict, d2: dict, d3:dict, d4:dict, d5:dict, d6:dict, d7:dict, 
     
     return df, df2, df3, df4, df5, df6, df7, df8, df9
 
-
-def writeToExcel(folder_name: str, filename: str, df:pd.DataFrame, df2:pd.DataFrame, df3:pd.DataFrame, df4:pd.DataFrame, df5:pd.DataFrame,
-                 df6:pd.DataFrame, df7:pd.DataFrame, df8:pd.DataFrame, df9:pd.DataFrame) -> None:
-    '''
-    Outputs data and results to an Excel file (.xlsx). Stylizes for presentation & readablilty.
-    '''
-    writer = pd.ExcelWriter(folder_name + filename, engine = 'xlsxwriter', options={'nan_inf_to_errors': True})
-    df.to_excel(writer, sheet_name = 'MajMin Diagonals', startcol = 0, startrow = 1, header = False)
-    df2.to_excel(writer, sheet_name = 'MajMin Diagonals', startcol = 8, startrow = 1, header = False, index = False)
-    df3.to_excel(writer, sheet_name = 'MajMin Diagonals', startcol = 15, startrow = 1, header = False)
-    df4.to_excel(writer, sheet_name = 'MajMin Diagonals', startcol = 23, startrow = 1, header = False, index = False)
-    df5.to_excel(writer, sheet_name = 'Area', startcol = 0, startrow = 1, header = False)
-    df6.to_excel(writer, sheet_name = 'Area', startcol = 7, startrow = 1, header = False, index = False)
-    df7.to_excel(writer, sheet_name = 'Perimeter', startcol = 0, startrow = 1, header = False)
-    df8.to_excel(writer, sheet_name = 'Perimeter', startcol = 7, startrow = 1, header = False, index = False)
-    df9.to_excel(writer, sheet_name = 'MajMin Diagonals', startcol = 31, startrow = 1, header = False, index = False)
+# REMOVED EXCEL WRITTING CODE FOR AZURE MIGRATION LINE 342 TO 427
 
 
-    workbook  = writer.book
-    worksheet = writer.sheets['MajMin Diagonals']
-    worksheet.freeze_panes(1, 0)
-    worksheet2 = writer.sheets['Area']
-    worksheet2.freeze_panes(1,0)
-    worksheet3 = writer.sheets['Perimeter']
-    worksheet3.freeze_panes(1,0)
-    
-    header1_format = workbook.add_format({
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'fg_color': '#9AE5AA',
-        'border': 2})
-    header2_format = workbook.add_format({
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'fg_color': '#F49E9E',
-        'border': 2})
-    header3_format = workbook.add_format({
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'fg_color': '#DDACF5',
-        'border': 2})
-    header4_format = workbook.add_format({
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'fg_color': '#C1DDE7',
-        'border': 2})
-    header5_format = workbook.add_format({
-        'bold': True,
-        'text_wrap': True,
-        'valign': 'top',
-        'fg_color': '#F7FA82',
-        'border': 2})    
-    
-    text_format = workbook.add_format({'bold': True})
-    for col_num, value in enumerate(df.columns.values):
-        worksheet.write(0, col_num+1, value, header1_format)
-    for col_num, value in enumerate(df2.columns.values):
-        worksheet.write(0, col_num + 8, value, header2_format)
-    for col_num, value in enumerate(df3.columns.values):
-        worksheet.write(0, col_num + 16, value, header3_format)
-    for col_num, value in enumerate(df4.columns.values):
-        worksheet.write(0, col_num + 23, value, header4_format)
-    for col_num, value in enumerate(df9.columns.values):
-        worksheet.write(0, col_num + 31, value, header5_format)        
-    for i, j in enumerate (df2.values):
-        for k, l in enumerate (j):
-            worksheet.write(1, k + 8, l, text_format)
-    for i, j in enumerate (df4.values):
-        for k, l in enumerate (j):
-            worksheet.write(1 , k + 23, l, text_format)
-    for i, j in enumerate (df9.values):
-        for k, l in enumerate (j):
-            worksheet.write(1 , k + 31, l, text_format)
-            
-    for col_num, value in enumerate(df5.columns.values):
-        worksheet2.write(0, col_num+1, value, header1_format)
-    for col_num, value in enumerate(df6.columns.values):
-        worksheet2.write(0, col_num + 8, value, header2_format)
-        
-    for col_num, value in enumerate(df7.columns.values):
-        worksheet3.write(0, col_num+1, value, header1_format)
-    for col_num, value in enumerate(df8.columns.values):
-        worksheet3.write(0, col_num + 8, value, header2_format)
-
-    
-    for i, j in enumerate (df6.values):
-        for k, l in enumerate (j):
-            worksheet2.write(1, k + 8, l, text_format)
-    for i, j in enumerate (df8.values):
-        for k, l in enumerate (j):
-            worksheet3.write(1, k + 8, l, text_format)
-    
-    writer.save()    # closes Excel writer and outputs Excel file
 
 
 def validate(actual_path, predicted_path, folder_name, filename):
@@ -454,5 +360,5 @@ def validate(actual_path, predicted_path, folder_name, filename):
         d7, d8 = calculate_perimeter_dicts(act_perimeter, pred_perimeter, intersected_files)
         d9 = get_averages(d2,d4)
         df, df2, df3, df4, df5, df6, df7, df8, df9 = create_dfs(d1, d2, d3, d4, d5, d6, d7, d8, d9)
-        writeToExcel(folder_name, filename, df, df2, df3, df4, df5, df6, df7, df8, df9)  # writes data and results to a .xlsx file
+        # writeToExcel(folder_name, filename, df, df2, df3, df4, df5, df6, df7, df8, df9)  # writes data and results to a .xlsx file
         print(time() - start_time)
